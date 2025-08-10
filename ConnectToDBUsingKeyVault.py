@@ -15,17 +15,13 @@ credential = ClientSecretCredential(
     client_secret=client_secret
 )
 
-# Connect to Key Vault
-kv_url = "https://myvault-365283504.vault.azure.net/"
-client = SecretClient(vault_url=kv_url, credential=credential)
-
 # Get secret from Key Vault
-sql_password = client.get_secret("dbadmin").value
+sql_password = "Descon123"
 
 # Connect to Azure SQL
 conn_str = (
     "Driver={ODBC Driver 18 for SQL Server};"
-    "Server=tcp:server-433655478.database.windows.net,1433;"
+    "Server=tcp:server-2033533870.database.windows.net,1433;"
     "Database=mydb;"
     f"UID=dbadmin;PWD={sql_password};"
     "Encrypt=yes;TrustServerCertificate=no;"
